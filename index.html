@@ -5,65 +5,100 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 
-<link rel="<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">"
+<!-- setting up fonts -->
 
-	<style type="text/css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+
+
+
+
+<style type="text/css">
+
+p{font-family: 'Ubuntu', sans-serif;}
+h1{font-family: 'Ubuntu', sans-serif;}
+ul{font-family: 'Ubuntu', sans-serif;}
 
 		#journal{
+			position:absolute;
+
+			left:15%;
 			width:200px;
 			height:225px;
-			background-color:black;
 			background-image: url(journal.jpg);
 			background-size:contain;
 			background-repeat:no-repeat;
-			display:inline-block;
 		}
 
 		#projects{
+			position:absolute;
+
+			left:40%;
 			width:250px;
 			height:200px;
-			background-color:black;
 			background-image: url(peru.gif);
 			background-size:contain;
 			background-repeat:no-repeat;
-			display:inline-block;
 		}
 
 		#aboutme{
+			position:absolute;
+			left:70%;
 			width:250px;
 			height:200px;
-			background-color:black;
 			background-image: url(ronaldo.gif);
 			background-size:contain;
 			background-repeat:no-repeat;
-			display:inline-block;
 		}
 
+		
 
-body{
+	
+#background{
+	position:absolute;
+	top:0%;
+		width:100%;
+		height:800px;
+		background-image:url(mp.jpeg);
+		background-size:cover;
 
-	/*margin:0px;*/
-	background-color:black;
 
 }
+
+body{
+	margin:0px;
+}
+
 </head>
 	</style>
 
 <body>
 
+
+<div id="background">
+
+<h1 id="heading" align="center">
+<span id="title">
+<h1>Sebastian's Website</h1>
+
+
+<!--linking to jounral, projets and aboutme--> 
 <a href ="journaL.html">
 	<div id="journal"></div>
-<a/>
+</a>
 
 <a href ="projects.html">
 	<div id="projects"></div>
-<a/>
+</a>
 
 <a href ="aboutme.html">
 	<div id="aboutme"></div>
-<a/>
+</a>
 
+</div> 
+<!-- end of background div -->
 </body>
 </html>
