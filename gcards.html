@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"rel="stylesheet">
+
+	<title></title>
+
+	<style type="text/css">
+		body{
+		/*margin:0px;*/
+			margin: 0;
+			background-image:url(peruflag.jpeg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			
+				}
+
+		h1 {
+			margin-bottom: 20px;
+			margin-left: 5px;
+			margin-right: 5px;
+
+		}
+
+		.square{
+			position: absolute;
+			width:515px;
+			height:515px;
+			display:inline-block;
+			opacity:0;
+            background-size: cover;
+            top: 55%;
+	    	left: 50%;
+	    	transform: translate(-50%, -50%);
+		}
+		#one {
+			background-image: url(machupichu.jpeg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		#two {
+			background-image: url(cusco.jpeg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		#three {
+			background-image: url(plane.jpeg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		#four {
+			background-image: url(alpaca.jpeg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		#five {
+			background-image: url(maras.jpeg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		#six {
+			background-image: url(sacsayhuaman.jpeg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		#seven {
+			background-image: url(gpig.jpeg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		#eight {
+			background-image: url(moray.jpeg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		#nine {
+			background-image: url(plazadearmas.jpeg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		#ten {
+			background-image: url(cusco2.jpeg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+
+
+	</style>
+</head>
+<body>
+
+	<center><h1> I am grateful for my dad for taking me to visit the beautiful country of Peru many times. Every time you press a key, it will reveal a photo of one of the cool things we have seen in Peru.  </h1></center>
+
+	<audio id="perunationalanthem" src="anthem.mp3"></audio>
+
+
+	<div id="one" class="square"></div>
+	<div id="two" class="square"></div>
+	<div id="three" class="square"></div>
+	<div id="four" class="square"></div>
+	<div id="five" class="square"></div>
+	<div id="six" class="square"></div>
+	<div id="seven" class="square"></div>
+	<div id="eight" class="square"></div>
+	<div id="nine" class="square"></div>
+	<div id="ten" class="square"></div>
+
+
+
+<script type="text/javascript">
+var counter = 0;
+
+			document.addEventListener("keypress", function (){
+				counter=counter+1
+				console.log(counter)
+				perunationalanthem.play()
+
+				if(counter==1)
+					{one.style.opacity = "1"}
+				if(counter==2)
+					{two.style.opacity = "1"
+					one.style.opacity = "0"}
+				if(counter==3)
+					{three.style.opacity = "1"
+					two.style.opacity = "0"}
+				if(counter==4)
+					{four.style.opacity = "1"
+					three.style.opacity = "0"}
+				if(counter==5)
+					{five.style.opacity = "1"
+					four.style.opacity = "0"}
+				if(counter==6)
+					{six.style.opacity = "1"
+					five.style.opacity = "0"}
+				if(counter==7)
+					{seven.style.opacity = "1"
+					six.style.opacity = "0"}
+				if(counter==8)
+					{eight.style.opacity = "1"
+					seven.style.opacity = "0"}
+				if(counter==9)
+					{nine.style.opacity = "1"
+					eight.style.opacity = "0"}
+				if(counter==10)
+					{ten.style.opacity = "1"
+					nine.style.opacity = "0"}
+				if(counter==11){
+					ten.style.opacity = "0"
+					counter=0
+				}
+
+				
+			})
+
+	</script>
+</body>
+</html>
