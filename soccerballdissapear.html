@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+  
+    <style type="text/css">
+        .goal{
+            width: 200px;
+            height: 200px;
+            background-size: contain;
+            background-color: black;
+            background-image: url(sbs.jpg); 
+            display: inline-block;
+            color-white;  
+            opacity: 0;         
+        }
+
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+    function make0sbs(input){
+        var sbs = document.createElement("div");
+        sbs.classList.add("goal")
+        document.body.appendChild(sbs);
+        sbs.innerText=input // Set inner text of the created div
+
+        sbs.addEventListener("mouseenter", function(){
+            sbs.style.opacity = 1; // Corrected the syntax to change opacity
+        });
+    }
+    
+    for(var counter=0; counter<5000; counter++) {
+        make0sbs(counter); // Pass counter as input to make0sbs function
+
+        
+        
+    }
+
+
+</script>
+
+</body>
+</html>
