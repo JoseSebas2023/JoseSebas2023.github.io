@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <style type="text/css">
+
+
+    p{font-family: 'Ubuntu', sans-serif;}
+    h1{font-family: 'Ubuntu', sans-serif;}
+    ul{font-family: 'Ubuntu', sans-serif;}
+
+    #podium{
+        width:600px;
+        height:400px;
+        background-image:url("podium.jpg");
+        background-repeat:no-repeat;
+        background-size: contain;
+        display:inline-block;
+        position:relative;
+
+    }
+    #runnerup{
+        width:500px;
+        height:500px;
+        background-image:url("456.jpg");
+        background-repeat:no-repeat;
+        display:inline-block;
+        position:relative;
+        background-size: contain;
+    }
+    #ye {
+        background-image: url(ye.jpg);
+        background-size: cover;
+    }
+
+    #lamar {
+        background-image: url(lamar.jpg);
+        background-size: cover;
+    }
+
+    #wayne {
+        background-image: url(lilw.jpg);
+         background-size: cover;
+    }
+
+    #tupac {
+        background-image: url(tupac.jpg);
+        background-size: cover;
+    }
+
+    #biggie {
+        background-image: url(big.jpg);
+        background-size: cover;
+    }
+    #dre {
+        background-image: url(dre.jpg);
+        background-size: cover;
+    }
+
+    #jcole {
+        background-image: url(jcole.jpeg);
+        background-size: cover;
+    }
+    #eminem {
+        background-image: url(eminem.jpg);
+        background-size: cover;
+    }
+    #drake {
+        background-image: url(drake.jpeg);
+        background-size: cover;
+    }
+    #jayz {
+        background-image: url(jayz.jpeg);
+        background-size: cover;
+    }
+    .album {
+        width: 100px;
+        height: 100px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: inline-block;
+        position:relative;
+        top:0px;
+
+    }
+    </style>
+</head>
+
+<body>
+
+<h1> Click to rank the albums! Which ones do you want to listen to the most over the holidays?</h1>
+        
+
+    <div class="album" id="ye"></div>
+    <div class="album" id="lamar"></div>
+    <div class="album" id="wayne"></div>
+    <div class="album" id="tupac"></div>
+    <div class="album" id="biggie"></div>
+    <div class="album" id="dre"></div>
+    <div class="album" id="jcole"></div>  
+    <div class="album" id="eminem"></div>
+    <div class="album" id="drake"></div>
+    <div class="album" id="jayz"></div>
+    <br>
+
+
+    <div id = "podium"></div>
+    <div id = "runnerup"></div>
+
+<script type="text/javascript">
+
+    var x;
+    var y;
+    var copy;
+
+    ye.addEventListener("click", function() {
+        copy = "ye.jpg"
+        console.log(copy)
+
+    });
+
+    lamar.addEventListener("click", function() {
+
+        copy = "lamar.jpg"
+                console.log(copy)
+
+    });
+
+
+    wayne.addEventListener("click", function() {
+
+        copy = "lilw.jpg"
+                console.log(copy)
+
+    });
+    
+    tupac.addEventListener("click", function() {
+
+        copy = "tupac.jpg"
+                console.log(copy)
+
+    });
+
+
+    biggie.addEventListener("click", function() {
+
+        copy = "big.jpg"
+                console.log(copy)
+
+    });
+
+    dre.addEventListener("click", function() {
+
+        copy = "dre.jpg"
+                console.log(copy)
+
+    });
+
+
+    jcole.addEventListener("click", function() {
+
+        copy = "jcole.jpeg"
+                console.log(copy)
+
+    });
+
+    eminem.addEventListener("click", function() {
+
+        copy = "eminem.jpg"
+                console.log(copy)
+    });
+
+    drake.addEventListener("click", function() {
+
+        copy = "drake.jpeg"
+                console.log(copy)
+    });
+
+    jayz.addEventListener("click", function() {
+
+        copy = "jayz.jpeg"
+                console.log(copy)
+    });
+    
+
+    document.addEventListener("mousemove", function(event){
+        x = event.clientX
+        y = event.clientY
+        console.log(event.clientX, event.clientY)})
+
+podium.addEventListener("click", 
+
+    function makeAlbum (){
+        var album = document.createElement("div");
+        album.classList.add("album")
+        document.body.appendChild(album);
+        album.style.backgroundImage = "url("+ copy + ")"
+        album.style.position="absolute"
+        album.style.left = x-50 + "px"
+        album.style.top = y + "px"
+        })
+
+runnerup.addEventListener("click", 
+
+    function makeAlbum (){
+        var album = document.createElement("div");
+        album.classList.add("album")
+        document.body.appendChild(album);
+        album.style.backgroundImage = "url("+ copy + ")"
+        album.style.position="absolute"
+        album.style.left = x-50 + "px"
+        album.style.top = y + "px"
+        })
+   
+    </script>
+</body>
+
+</html>
