@@ -1,0 +1,65 @@
+</!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+
+<style type="text/css">
+	#screen{
+		width: 100%;
+		height: 90%;
+		background-color: darkred;
+		background-position: center;
+		background-size: contain;
+		background-repeat:no-repeat;
+		background-image:url(screen.jpg);
+	}
+
+	#names{
+		
+		width: 100%;
+		height: 50%;
+		background-position: center;
+		background-size:contain;
+		background-repeat:no-repeat;
+		position: relative;
+		top:30px;
+
+
+/*		position: absolute;*/
+
+	}
+ 	
+ 	body{
+/*margin:0px;*/
+	background-color:darkred;
+</style>
+
+</head>
+
+<body>
+
+	<center><h1> Wondering what show to watch? Reload the page to see... </h1></center>
+	<div id="screen">
+	<div id = "names"></div>
+	</div>
+
+	<script type="text/javascript">
+
+		var random = Math.round(Math.random()*7)
+		var show = ["url(omb.jpeg)", "url(fam.jpeg)", "url(bp.jpeg)", "url(hmt.jpeg)", "url(bb.jpeg)", "url(st.jpeg)", "url(thes.jpeg", "url(tlou.jpeg)"];
+
+		console.log(show[random])
+		//console.log(brawlstars[1])
+
+		document.addEventListener("hover", function(){ })
+			var random = Math.round(Math.random()*7)
+			names.style.backgroundImage = show[random]
+
+		//random= Math.random.backgroundimage = options[random]
+	</script>
+
+</body>
+</html>
