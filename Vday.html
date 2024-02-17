@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style type="text/css">
+		
+		.heart{
+			width:300px;
+			height:231.5px;
+			background-color:pink;
+			background-image:url(heart.jpeg);
+			background-repeat: no-repeat;
+			background-size: contain;
+			position:absolute;
+			opacity: 1;
+			transition:1s;
+
+		}
+
+		#square0:hover{
+			background-image:url(nater.jpeg);
+			background-size: contain;
+			background-repeat:no-repeat;
+
+		}
+
+		#square1:hover{
+			background-image:url(ndc.jpeg);
+			background-size: contain;
+			background-repeat:no-repeat;
+
+		}
+
+		#square2:hover{
+			background-image:url(jhugs.jpg);
+			background-size: contain;
+			background-repeat:no-repeat;
+
+		}
+
+		#square3:hover{
+			background-image:url(lukejon.jpeg);
+			background-size: contain;
+			background-repeat:no-repeat;
+
+		}
+
+		#square4:hover{
+			background-image:url(jonnysaj.jpeg);
+			background-size: contain;
+			background-repeat:no-repeat;
+
+		}
+
+	body{
+		background-color: pink;
+	}
+
+	</style>
+</head>
+<body>
+
+	<div class="heading" id=vday>
+
+		<h1> Hover over the hearts to see my friend's cute bromances:</h1>
+	</div>
+
+<script type="text/javascript">
+	
+	function makeHearts (placeholder){
+		var square = document.createElement("div")
+		square.classList.add("heart")
+		document.body.appendChild(square)
+		square.id= "square"+placeholder;
+
+
+		function move(){
+		square.style.left = Math.random()*1200 +"px"
+		square.style.top = Math.random()*650 +"px"
+
+		}
+
+
+
+		setInterval(move, 1800)
+	}
+
+	for(var i=0; i<5; i=i+1){
+		makeHearts(i)
+	}
+		
+</script>
+</body>
+</html>

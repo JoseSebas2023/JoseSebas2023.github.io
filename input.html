@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<div class="entry" id=entry1>
+
+		<h1>Write in someones name to find out their crush</h1>
+
+	<input id="input">
+
+	</input>
+
+	<button id="submission">
+	submit
+	</button>
+	<div id="answer"></div>
+	<script type="text/javascript">
+		submission.addEventListener("click",function(){
+			console.log(input.value)
+			answer.innerText = input.value
+			if (input.value == "jonny"){answer.innerText = "Sabrina Sabrina Sabrina!!!"}
+			else if (input.value == "seb"){answer.innerText = "🤔"}
+			else if (input.value == "henry"){answer.innerText = "Andriana!! (too bad she's a junior - lil to old for him)"}
+			else if (input.value == "nathan"){answer.innerText = "blud secretly wants to get back with Winslow"}
+			else if (input.value == "cece"){answer.innerText = "Chrissy B (they had the best one day relationship ever)"}
+			else {answer.innerText = "You think Jonny is a cutie patootie!! (Lowkey valid take) "}
+			//else{answer.innerText = "your answer is " + Math.round(Math.random()*100) + " % correct"}
+		})
+
+
+	</script>
+
+	
+</body>
+</html>

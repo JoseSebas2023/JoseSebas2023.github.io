@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+<style type="text/css">
+	#car{
+		width: 250px;
+		height: 200px;
+		background-color: white;
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		background-image: url(car.jpg);
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+</style>
+
+</head>
+<body>
+<div id="car"></div>
+
+<script type="text/javascript">
+	var x = 0 
+	var y = 0
+
+	document.addEventListener("keydown", function (event){
+		console.log(event.code)
+		if (event.code == "ArrowRight")
+			{x=x+10
+			{car.style.left = x + "px"}
+		}
+
+		if 	(event.code == "ArrowLeft")
+			{x=x-10
+			{car.style.left = x + "px"}
+		}
+
+	
+		if 	(event.code == "ArrowUp")
+			{y=y-10
+			{car.style.top = y + "px"}
+		}
+
+	
+		if 	(event.code == "ArrowDown")
+			{y=y+10
+			{car.style.top = y + "px"}
+		}
+
+});
+		
+
+	// var x = 100;
+
+	// document.addEventListener("keydown", function(input){
+	// 	console.log(input.key)
+	// 	var car = document.getElementById("car");
+
+	// 	if (input.key === "ArrowRight"){
+	// 		x = x + 100;
+	// 		car.style.left = x + "px";
+	// 	}
+		
+	// 	if (input.key === "ArrowLeft"){
+	// 		x = x - 100;
+	// 		car.style.left = x + "px";
+	// 	}
+	// })
+
+</script>
+	
+</body>
+</html>
