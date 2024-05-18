@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		
+		#ball{
+			width:100px;
+			height:100px;
+			background-color:green;
+			position: absolute
+		}
+
+		#racket{
+			width:200px;
+			height:200px;
+			background-color:blue;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="racket"></div>
+
+	<div id="ball"></div>
+
+	<script type="text/javascript">
+
+		function randomPosition (){
+
+			var ballLeft = Math.round(Math.random()*10)
+			var racketLeft = Math.round(Math.random()*10)
+
+			racket.style.left = ballLeft +"px"
+			ball.style.left = racketLeft+"px"
+			console.log(ballLeft)
+			console.log(racketLeft)
+
+			if (racketLeft == ballLeft)
+			{
+				alert("does this work?")
+			}
+
+		}
+
+		randomPosition();
+
+		
+		
+
+	</script>
+
+</body>
+</html>

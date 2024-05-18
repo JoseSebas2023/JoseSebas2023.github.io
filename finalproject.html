@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tennis Game</title>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #court {
+            width: 350px;
+            height: 750px;
+            background-size: cover;
+            background-color: blue;
+            background-image: url(tenniscourt.png);
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #player, #player2 {
+            width: 70px;
+            height: 70px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+        }
+
+        #player {
+            background-image: url(racket.jpeg);
+            top: calc(80%);
+            left: calc(50% - 35px);
+        }
+
+        #player2 {
+            background-image: url(racket2.jpeg);
+            top: 10%;
+            left: calc(50% - 35px);
+        }
+
+        #ball {
+            width: 50px;
+            height: 50px;
+            background-image: url(tennisball.jpeg);
+            background-size: contain;
+            background-color: black;
+            position: absolute;
+            top: calc(50% - 25px);
+            left: calc(50% - 25px);
+            transition: top 1.5s linear, left 1.5s linear;
+        }
+
+        #scoreboard {
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            font-size: 24px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="court">
+        <div id="player"></div>
+        <div id="player2"></div>
+        <div id="ball"></div>
+    </div>
+    <div id="scoreboard">Score: 0</div>
+
+    <script type="text/javascript">
+        var player = document.getElementById("player");
+        var player2 = document.getElementById("player2");
+        var ball = document.getElementById("ball");
+        var scoreboard = document.getElementById("scoreboard");
+        var score = 0;
+
+        var x = parseFloat(getComputedStyle(player).left);
+        var y = parseFloat(getComputedStyle(player).top);
+        var g = parseFloat(getComputedStyle(player2).left);
+        var h = parseFloat(getComputedStyle(player2).top);
+
+        document.addEventListener("keydown", function (event) {
+            if (event.code == "ArrowRight") {
+                x += 10;
+                player.style.left = x + "px";
+            }
+            if (event.code == "ArrowLeft") {
+                x -= 10;
+                player.style.left = x + "px";
+            }
+            if (event.code == "ArrowUp") {
+                y -= 10;
+                player.style.top = y + "px";
+            }
+            if (event.code == "ArrowDown") {
+                y += 10;
+                player.style.top = y + "px";
+            }
+
+            if (event.code == "KeyD") {
+                g += 10;
+                player2.style.left = g + "px";
+            }
+            if (event.code == "KeyA") {
+                g -= 10;
+                player2.style.left = g + "px";
+            }
+            if (event.code == "KeyW") {
+                h -= 10;
+                player2.style.top = h + "px";
+            }
+            if (event.code == "KeyS") {
+                h += 10;
+                player2.style.top = h + "px";
+            }
+        });
+
+        function moveBallToPlayer(player) {
+            var playerLeft = parseFloat(getComputedStyle(player).left);
+            var playerTop = parseFloat(getComputedStyle(player).top);
+            
+            ball.style.left = playerLeft + "px";
+            ball.style.top = playerTop + "px";
+        }
+
+        function moveBall() {
+            var ballTop = parseFloat(getComputedStyle(ball).top);
+            var ballLeft = parseFloat(getComputedStyle(ball).left);
+
+            var playerTop = parseFloat(getComputedStyle(player).top);
+            var playerBottom = playerTop + 70;
+            var playerLeft = parseFloat(getComputedStyle(player).left);
+            var playerRight = playerLeft + 70;
+
+            var player2Top = parseFloat(getComputedStyle(player2).top);
+            var player2Bottom = player2Top + 70;
+            var player2Left = parseFloat(getComputedStyle(player2).left);
+            var player2Right = player2Left + 70;
+
+            function checkCollision(playerTop, playerBottom, playerLeft, playerRight) {
+                return (
+                    ballLeft + 50 >= playerLeft &&
+                    ballLeft <= playerRight &&
+                    ballTop + 50 >= playerTop &&
+                    ballTop <= playerBottom
+                );
+            }
+
+            if (checkCollision(playerTop, playerBottom, playerLeft, playerRight)) {
+                score++;
+                updateScore();
+                setTimeout(() => moveBallToPlayer(player2), 100); // Move to player2 after 1s
+            }
+
+            if (checkCollision(player2Top, player2Bottom, player2Left, player2Right)) {
+                score++;
+                updateScore();
+                setTimeout(() => moveBallToPlayer(player), 100); // Move to player after 1s
+            }
+        }
+
+        function updateScore() {
+            scoreboard.textContent = "Score: " + score;
+        }
+
+        function startGame() {
+            moveBallToPlayer(player2); // Start by moving the ball to player2
+            setInterval(moveBall, 1000); // Check for collisions every 100ms
+        }
+
+        ball.addEventListener("click", startGame);
+    </script>
+</body>
+</html>
