@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+body{
+	background-color:rgb(255,25,100);
+}
+
+#title{
+	font-size: 80px;
+	text-align: center;
+	position: relative;
+}
+	</style>
+
+
+</head>
+<body>
+
+<div id="title">Press any key to change colors!</div>
+
+	<script type="text/javascript">
+
+		document.addEventListener("keypress", function(event){
+		var r = Math.random()*255
+		var g = Math.random()*255
+		var b = Math.random()*255
+		console.log(r,g,b)
+
+		document.body.style.backgroundColor = "rgb("+ r + "," + g + "," + b + ")"
+		})
+	</script>
+</body>
+</html>
