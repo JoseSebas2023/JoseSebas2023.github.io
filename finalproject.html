@@ -154,13 +154,13 @@
             if (checkCollision(playerTop, playerBottom, playerLeft, playerRight)) {
                 score++;
                 updateScore();
-                setTimeout(() => moveBallToPlayer(player2), 100); // Move to player2 after 1s
+                setTimeout(() => moveBallToPlayer(player2), 100); 
             }
 
             if (checkCollision(player2Top, player2Bottom, player2Left, player2Right)) {
                 score++;
                 updateScore();
-                setTimeout(() => moveBallToPlayer(player), 100); // Move to player after 1s
+                setTimeout(() => moveBallToPlayer(player), 100);
             }
         }
 
@@ -169,8 +169,8 @@
         }
 
         function startGame() {
-            moveBallToPlayer(player2); // Start by moving the ball to player2
-            setInterval(moveBall, 1000); // Check for collisions every 100ms
+            moveBallToPlayer(player2);
+            setInterval(moveBall, 1000); 
         }
 
         ball.addEventListener("click", startGame);
